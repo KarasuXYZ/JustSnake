@@ -6,7 +6,7 @@
 }
 
 body {
-    background: linear-gradient(0deg,#035e03, #0b8be1 );
+    background: linear-gradient(0deg, #035e03, #0b8be1);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -27,7 +27,8 @@ body {
     justify-content: start;
     gap: 20px;
 }
-.visible{
+
+.visible {
     display: flex;
 }
 
@@ -36,6 +37,7 @@ body {
     font-weight: bold;
     color: white;
 }
+
 .buttons {
     margin-top: 2em;
     display: flex;
@@ -53,11 +55,12 @@ body {
     transition: 0.4s;
 }
 
-.buttons button:hover{
+.buttons button:hover {
     transform: translateY(-2px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: 0.4s;
 }
+
 /* add in the leter part of the project shine animetion to button when user are doing hover on them */
 
 .gameCanvas {
@@ -75,6 +78,22 @@ body {
 
 .score {
     font-size: 1.2rem;
-    
 }
 
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(10, 10, 10, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: none;
+}
+
+.wersja {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}

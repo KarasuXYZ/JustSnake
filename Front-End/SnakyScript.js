@@ -98,6 +98,8 @@ function startGame() {
     game = setInterval(gameLoop, 100);
 }
 
+
+
 function endGame() {
     clearInterval(game);
     endScore.textContent = score;
@@ -109,21 +111,28 @@ function showGameOver(){
     gameOverScrean.classList.add("visible");
 }
 
-const startBtn = document.getElementById("Start");
+//const startBtn = document.getElementById("Start");
+document.querySelectorAll(".Start").forEach(startBtn => {
+    startBtn.addEventListener("click", ()=>{
+    menuScrean.classList.remove("visible");
+    gameOverScrean.classList.remove("visible");
+    gameScrean.classList.add("visible");
+    startGame();
+});
+    
+});
 const menuBtn = document.getElementById("Menu");
 
 const menuScrean = document.getElementById("MenuScrean");
 const gameScrean = document.getElementById("GameScrean");
 const gameOverScrean = document.getElementById("GameOverScrean");
 
-startBtn.addEventListener("click", ()=>{
-    menuScrean.classList.remove("visible");
-    gameScrean.classList.add("visible");
-    startGame();
-});
+
 
 menuBtn.addEventListener("click", () => {
     gameScrean.classList.remove("visible");
+    gameOverScrean.classList.remove("visible");
     menuScrean.classList.add("visible");
     if (game) clearInterval(game);
 });
+
