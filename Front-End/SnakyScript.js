@@ -1,3 +1,7 @@
+const menuScrean = document.getElementById("MenuScreen"); // poprawione ID w HTML
+const gameScrean = document.getElementById("GameScreen"); // poprawione ID w HTML
+const gameOverScrean = document.getElementById("GameOverScreen"); // poprawione ID w HTML
+const menuBtn = document.getElementById("Menu");
 let score = 0;
 const endScore = document.getElementById("score");
 
@@ -9,8 +13,8 @@ let snake, apple, game, velocity = {x: 0, y: 0};
 
 function createApple() {
     apple = {
-        x: Math.floor(Math.random() * (canvas.width/celSize)) * celSize,
-        y: Math.floor(Math.random() * (canvas.height/celSize)) * celSize
+        x: Math.floor(Math.random() * (canvas.width / celSize)) * celSize,
+        y: Math.floor(Math.random() * (canvas.height / celSize)) * celSize
     };
 }
 
@@ -29,14 +33,14 @@ function updateSnake() {
         x: snake[0].x + velocity.x * celSize,
         y: snake[0].y + velocity.y * celSize
     };
-    snake.unshift(head);
+    snake.unshift(head); // dodanie nowej głowy
 
     if (head.x === apple.x && head.y === apple.y) {
         score += 10;
         createApple();
     }
     else
-        snake.pop();
+        snake.pop(); // usuwanie ostatniego elementu, jeśli nie zjedzono jabłka
 }
 
 function checkCollison() {
@@ -53,14 +57,14 @@ function checkCollison() {
 }
 
 function draw() {
-    ctx.fillStyle = "#006707";
+    ctx.fillStyle = "#006707"; // tło
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = "red";
+    ctx.fillStyle = "red"; // jabłko
     ctx.fillRect(apple.x, apple.y, celSize, celSize);
 
     for (let i = 0; i < snake.length; i++) {
-        i === 0 ? ctx.fillStyle = "blue" : ctx.fillStyle = "lightblue";
+        i === 0 ? ctx.fillStyle = "blue" : ctx.fillStyle = "lightblue"; // głowa / ciało
         ctx.fillRect(snake[i].x, snake[i].y, celSize, celSize);
     }
 }
@@ -95,10 +99,8 @@ function gameLoop() {
 function startGame() {
     initGame();
     if (game) clearInterval(game);
-    game = setInterval(gameLoop, 100);
+    game = setInterval(gameLoop, 100); // prędkość węża
 }
-
-
 
 function endGame() {
     clearInterval(game);
@@ -114,20 +116,12 @@ function showGameOver(){
 //const startBtn = document.getElementById("Start");
 document.querySelectorAll(".Start").forEach(startBtn => {
     startBtn.addEventListener("click", ()=>{
-    menuScrean.classList.remove("visible");
-    gameOverScrean.classList.remove("visible");
-    gameScrean.classList.add("visible");
-    startGame();
+        menuScrean.classList.remove("visible");
+        gameOverScrean.classList.remove("visible");
+        gameScrean.classList.add("visible");
+        startGame();
+    });
 });
-    
-});
-const menuBtn = document.getElementById("Menu");
-
-const menuScrean = document.getElementById("MenuScrean");
-const gameScrean = document.getElementById("GameScrean");
-const gameOverScrean = document.getElementById("GameOverScrean");
-
-
 
 menuBtn.addEventListener("click", () => {
     gameScrean.classList.remove("visible");
@@ -135,4 +129,3 @@ menuBtn.addEventListener("click", () => {
     menuScrean.classList.add("visible");
     if (game) clearInterval(game);
 });
-
