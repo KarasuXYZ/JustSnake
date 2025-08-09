@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake Game</title>
-    <link rel="stylesheet" href="/Front-End/style.css">
+    <link rel="stylesheet" href="./Front-End/style.css">
 </head>
 <body>
-    <div class="container visible" id="MenuScrean">
+
+    <div class="container visible" id="MenuScreen">
         <div class="title">Snake The Game</div>
         <div class="buttons">
             <button class="Start">Start Game</button>
             <!-- Później dodam więcej opcji-->
-
         </div>
     </div>
 
-    <div class="container" id="GameScrean">
-    
-        <canvas id="gameCanvas" width="600" height="800"></canvas> <!-- in the futere let user chose what with or height then want in game-->
-        
+    <div class="container" id="GameScreen">
+        <canvas id="gameCanvas" width="600" height="800">
+            Twoja przeglądarka nie obsługuje elementu Canvas.
+        </canvas> <!-- in the future let user choose width or height they want in game -->
     </div>
 
-    <div class="container" id="GameOverScrean">
+    <div class="container" id="GameOverScreen">
         <div class="gameOver">
-            <div class="title">Game over</div>
+            <div class="title">Game Over</div>
             <div class="score">Your score is: <span id="score">0</span></div>
             <div class="score">The best score is: <span id="BestScore">0</span></div>
             <div class="buttons">
@@ -35,13 +35,11 @@
     </div>
 
     <footer>
-        <div class="footer">
-            Autor: Karasu
-        </div>
-        <div class="wersja">
-            1.0.0
-        </div>
+        <div class="footer">Autor: Karasu</div>
+        <div class="wersja">1.0.0</div>
     </footer>
-    <script src="/Front-End/SnakyScript.js"></script>
+
+    <script src="./Front-End/SnakyScript.js"></script>
+
 </body>
 </html>
