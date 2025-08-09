@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="/Front-End/style.css">
+</head>
+<body>
+    <div class="container visible" id="MenuScrean">
+        <div class="title">Snake The Game</div>
+        <div class="buttons">
+            <button id="Start">Start Game</button>
+            <!-- Później dodam więcej opcji-->
+
+        </div>
+    </div>
+
+    <div class="container" id="GameScrean">
+    
+        <canvas id="gameCanvas" width="600" height="800"></canvas> <!-- in the futere let user chose what with or height then want in game-->
+        
+    </div>
+
+    <div class="container" id="GameOverScrean">
+        <div class="gameOver">
+            <div class="title">Game over</div>
+            <div class="score">Your score is: <span id="score">0</span></div>
+            <div class="score">The best score is: <span id="score">0</span></div>
+            <div class="buttons">
+                <button id="Start">Play again</button>
+                <button id="Menu">Main menu</button>
+            </div>
+        </div>
+    </div>
+    <script src="/Front-End/SnakyScript.js"></script>
+</body>
+</html>
